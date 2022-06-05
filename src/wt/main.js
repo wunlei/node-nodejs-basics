@@ -19,7 +19,7 @@ export const performCalculations = async () => {
         resolve({ status: "resolved", data: message });
       });
       worker.on("error", (error) => {
-        reject({ status: "rejected", data: null });
+        resolve({ status: "rejected", data: null });
       });
     });
 
