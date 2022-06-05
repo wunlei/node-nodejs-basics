@@ -24,10 +24,10 @@ export const calculateHash = async () => {
     const content = await fs.readFile(filePath);
     hashSum.update(content);
     const hex = hashSum.digest("hex");
-    return hex;
+    console.log(hex);
   } catch (err) {
     console.log(err);
   }
 };
 
-console.log(await calculateHash());
+calculateHash();
