@@ -14,9 +14,9 @@ export const compress = async () => {
 
   try {
     if (!isFileExist) {
-      throw new Error("FS operation failed: file doesn't exist");
+      throw new Error("FS operation failed: fileToCompress.txt doesn't exist");
     } else if (isGzExist) {
-      throw new Error("FS operation failed: file already exists");
+      throw new Error("FS operation failed: archive.gz already exists");
     }
   } catch (err) {
     console.error(err.message);

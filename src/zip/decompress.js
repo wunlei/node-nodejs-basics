@@ -12,10 +12,10 @@ export const decompress = async () => {
   const isGzExist = await checkIsFileExist(gzPath);
 
   try {
-    if (isFileExist) {
-      throw new Error("FS operation failed: file already exists");
-    } else if (!isGzExist) {
-      throw new Error("FS operation failed: file doesn't exist");
+    if (!isGzExist) {
+      throw new Error("FS operation failed: archive.gz doesn't exist");
+    } else if (isFileExist) {
+      throw new Error("FS operation failed: fileToCompress.txt already exists");
     }
   } catch (err) {
     console.error(err.message);
